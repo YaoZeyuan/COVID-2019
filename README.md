@@ -13,7 +13,9 @@ SEIR 模型还假设病毒传播受到群体免疫的限制。这意味着，随
 
 via https://chat.openai.com/chat
 
-项目在线地址: http://yaozeyuan.online/COVID-2019
+项目在线地址: https://yaozeyuan.online/seir-model/index.html
+
+中文术语翻译参考谷歌翻译&[这份文档](http://web.stat.nankai.edu.cn/ZYRC/2MEChapters/MEChapt3.pdf)
 
 ---
 

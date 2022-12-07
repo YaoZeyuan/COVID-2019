@@ -964,19 +964,10 @@
 
     <div style="flex: 0 0 20; width:20px"></div>
 
-    <div class="column">
-      <div class="paneltitle" data-raw="Mortality Statistics">死亡率</div>
-      <div class="paneldesc" style="height:30px" data-raw="Case fatality rate">病死率.<br></div>
-      <div class="slidertext">{(CFR*100).toFixed(2)} %</div>
-      <input class="range" style="margin-bottom: 8px" type=range bind:value={CFR} min={0} max=1 step=0.0001>
-      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Time from end of incubation to death">从感染(潜伏期)到死亡的天数.<br></div>
-      <div class="slidertext">{Time_to_death} 天</div>
-      <input class="range" type=range bind:value={Time_to_death} min={(D_infectious)+0.1} max=100 step=0.01>
-    </div>
 
     <div class="column">
-      <div class="paneltitle" data-raw="Recovery Times">恢复期</div>
-      <div class="paneldesc" style="height:30px" data-raw="Length of hospital stay">住院时间<br></div>
+      <div class="paneltitle" data-raw="Recovery Times">康复期</div>
+      <div class="paneldesc" style="height:30px" data-raw="Length of hospital stay">从确诊到康复所需天数<br></div>
       <div class="slidertext">{D_recovery_severe} 天</div>
       <input class="range" style="margin-bottom: 8px" type=range bind:value={D_recovery_severe} min={0.1} max=100 step=0.01>
       <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw='Recovery time for mild cases'><br>恢复比率</div>
@@ -985,13 +976,23 @@
     </div>
 
     <div class="column">
-      <div class="paneltitle">Care statistics</div>
-      <div class="paneldesc" style="height:30px">Hospitalization rate.<br></div>
+      <div class="paneltitle" data-raw="Care statistics">入院率</div>
+      <div class="paneldesc" style="height:30px" data-raw="Hospitalization rate">确诊患者住院率<br></div>
       <div class="slidertext">{(P_SEVERE*100).toFixed(2)} %</div>
       <input class="range" style="margin-bottom: 8px"type=range bind:value={P_SEVERE} min={0} max=1 step=0.0001>      
-      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px">Time to hospitalization.<br></div>
-      <div class="slidertext">{D_hospital_lag} Days</div>
+      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Time to hospitalization">从确诊到住院的天数.<br></div>
+      <div class="slidertext">{D_hospital_lag} 天</div>
       <input class="range" type=range bind:value={D_hospital_lag} min={0.5} max=100 step=0.01>
+    </div>
+
+    <div class="column">
+      <div class="paneltitle" data-raw="Mortality Statistics">死亡率</div>
+      <div class="paneldesc" style="height:30px" data-raw="Case fatality rate">确诊患者病死率<br></div>
+      <div class="slidertext">{(CFR*100).toFixed(2)} %</div>
+      <input class="range" style="margin-bottom: 8px" type=range bind:value={CFR} min={0} max=1 step=0.0001>
+      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Time from end of incubation to death">从确诊到死亡的天数.<br></div>
+      <div class="slidertext">{Time_to_death} 天</div>
+      <input class="range" type=range bind:value={Time_to_death} min={(D_infectious)+0.1} max=100 step=0.01>
     </div>
 
   </div>

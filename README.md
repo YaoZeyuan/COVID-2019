@@ -15,7 +15,15 @@ via https://chat.openai.com/chat
 
 项目在线地址: https://yaozeyuan.online/seir-model/index.html
 
-中文术语翻译参考谷歌翻译&[这份文档](http://web.stat.nankai.edu.cn/ZYRC/2MEChapters/MEChapt3.pdf)
+中文术语翻译参考
+
+- 谷歌翻译
+- [这份文档](http://web.stat.nankai.edu.cn/ZYRC/2MEChapters/MEChapt3.pdf)
+- [这篇论文](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8800716/)
+
+基础转化模型如下图
+
+![基础转化模型](http://tva1.sinaimg.cn/large/007Yq4pTly1h8vrrj2ugaj30ae0503z7.jpg)
 
 ---
 

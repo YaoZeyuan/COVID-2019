@@ -25,6 +25,11 @@ via https://chat.openai.com/chat
 
 ![基础转化模型](http://tva1.sinaimg.cn/large/007Yq4pTly1h8vrrj2ugaj30ae0503z7.jpg)
 
+![image.png](http://tva1.sinaimg.cn/large/007Yq4pTly1h8vspvhf04j317z0wwe1x.jpg)
+![image.png](http://tva1.sinaimg.cn/large/007Yq4pTly1h8vsqerl7bj317s0xrke0.jpg)
+![image.png](http://tva1.sinaimg.cn/large/007Yq4pTly1h8vsqz3j5gj317q0ujgwt.jpg)
+![image.png](http://tva1.sinaimg.cn/large/007Yq4pTly1h8vsrf8zj4j317o0tme52.jpg)
+
 ---
 
 _Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_

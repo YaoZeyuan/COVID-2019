@@ -1141,10 +1141,10 @@ The clinical dynamics in this model are an elaboration on SEIR that simulates th
 <!-- Input data -->
 <div style="margin-bottom: 30px">
 
-  <div class="center" style="padding: 10px; margin-top: 3px; width: 925px">
+  <div class="center" style="padding: 10px; margin-top: 3px; width: 925px;">
     <div class="legendtext">Export parameters:</div>
     <form>
-      <textarea type="textarea" rows="1" cols="5000" style="white-space: nowrap;  overflow: auto; width:100%; text-align: left" id="fname" name="fname">{state}</textarea>
+      <textarea type="textarea" rows="1" cols="5000" style="white-space: nowrap;  overflow: auto; width:100%; text-align: left;  min-height:40px;" id="fname" name="fname">{state}</textarea>
     </form>
   </div>
 </div>

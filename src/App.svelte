@@ -658,7 +658,7 @@
           <div class="legendtitle">易感者</div>
           <div style="padding-top: 5px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*Iters[active_][0]))} 
-                                  ({ (100*Iters[active_][0]).toFixed(2) }%)</i></div>
+                                  ({ (100*Iters[active_][0])?.toFixed(2) }%)</i></div>
           <div class="legendtextnum"><span style="font-size:12px; padding-right:2px; color:#CCC">Δ</span> <i>{formatNumber(Math.round(N*get_d(active_)[0]))} / day</i>
                                  </div>
           </div>
@@ -678,7 +678,7 @@
 
           <div style="padding-top: 5px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*Iters[active_][1]))} 
-                                  ({ (100*Iters[active_][1]).toFixed(2) }%)</div>
+                                  ({ (100*Iters[active_][1])?.toFixed(2) }%)</div>
           <div class="legendtextnum"><span style="font-size:12px; padding-right:2px; color:#CCC">Δ</span> <i>{formatNumber(Math.round(N*get_d(active_)[1])) } / day</i>
                                  </div>
           </div>
@@ -697,7 +697,7 @@
           <div class="legendtitle">感染者</div>
           <div style="padding-top: 5px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*Iters[active_][2]))} 
-                                  ({ (100*Iters[active_][2]).toFixed(2) }%)</div>
+                                  ({ (100*Iters[active_][2])?.toFixed(2) }%)</div>
           <div class="legendtextnum"><span style="font-size:12px; padding-right:2px; color:#CCC">Δ</span> <i>{formatNumber(Math.round(N*get_d(active_)[2])) } / day</i>
                                  </div>
           </div>
@@ -717,7 +717,7 @@
           <div class="legendtitle">康复人群</div>
           <div style="padding-top: 10px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N* (1-Iters[active_][0]-Iters[active_][1]-Iters[active_][2]) ))} 
-                                  ({ ((100*(1-Iters[active_][0]-Iters[active_][1]-Iters[active_][2]))).toFixed(2) }%)</div>
+                                  ({ ((100*(1-Iters[active_][0]-Iters[active_][1]-Iters[active_][2])))?.toFixed(2) }%)</div>
           <div class="legendtextnum"><span style="font-size:12px; padding-right:2px; color:#CCC">Δ</span> <i>{formatNumber(Math.round(N*(get_d(active_)[3]+get_d(active_)[4]+get_d(active_)[5]+get_d(active_)[6]+get_d(active_)[7]) )) } / day</i>
                                  </div>
           </div>
@@ -735,7 +735,7 @@
 
           <div style="padding-top: 3px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*(Iters[active_][7]+Iters[active_][8]) ))} 
-                                  ({ (100*(Iters[active_][7]+Iters[active_][8])).toFixed(2) }%)</div>
+                                  ({ (100*(Iters[active_][7]+Iters[active_][8]))?.toFixed(2) }%)</div>
           </div>
         </div>
         <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 8px; position:relative;">完全康复</div>
@@ -750,7 +750,7 @@
           <div class="legendtitle">住院患者</div>
           <div style="padding-top: 3px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*(Iters[active_][5]+Iters[active_][6]) ))} 
-                                  ({ (100*(Iters[active_][5]+Iters[active_][6])).toFixed(2) }%)</div>
+                                  ({ (100*(Iters[active_][5]+Iters[active_][6]))?.toFixed(2) }%)</div>
           </div>
           <div class="legendtextnum"><span style="font-size:12px; padding-right:2px; color:#CCC">Δ</span> <i>{formatNumber(Math.round(N*(get_d(active_)[5]+get_d(active_)[6]))) } / day</i>
                                  </div>
@@ -768,7 +768,7 @@
           <div class="legendtitle">死亡人数</div>
           <div style="padding-top: 3px; padding-bottom: 1px">          
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*Iters[active_][9]))} 
-                                  ({ (100*Iters[active_][9]).toFixed(2) }%)</div>
+                                  ({ (100*Iters[active_][9])?.toFixed(2) }%)</div>
           <div class="legendtextnum"><span style="font-size:12px; padding-right:2px; color:#CCC">Δ</span> <i>{formatNumber(Math.round(N*get_d(active_)[9])) } / day</i>
                                  </div>
           </div>
@@ -836,12 +836,12 @@
                     height:{height+19}px">
 
         <div style="position:absolute; opacity: 0.5; top:-5px; left:10px; width: 120px">
-        <span style="font-size: 13px">{@html math_inline("\\mathcal{R}_t=" + (R0*InterventionAmt).toFixed(2) )}</span> ⟶ 
+        <span style="font-size: 13px">{@html math_inline("\\mathcal{R}_t=" + (R0*InterventionAmt)?.toFixed(2) )}</span> ⟶ 
         </div>
 
         {#if xScaleTime(InterventionTime) >= 100}
           <div style="position:absolute; opacity: 0.5; top:-2px; left:-97px; width: 120px">
-          <span style="font-size: 13px">⟵ {@html math_inline("\\mathcal{R}_0=" + (R0).toFixed(2) )}</span>
+          <span style="font-size: 13px">⟵ {@html math_inline("\\mathcal{R}_0=" + (R0)?.toFixed(2) )}</span>
           </div>      
         {/if}
 
@@ -887,7 +887,7 @@
               <div class="paneldesc" data-raw="to decrease transmission by">感染者的隔离比率<br></div>
               </div>
               <div style="pointer-events: all">
-              <div class="slidertext" on:mousedown={lock_yaxis}>{(100*(1-InterventionAmt)).toFixed(2)}%</div>
+              <div class="slidertext" on:mousedown={lock_yaxis}>{(100*(1-InterventionAmt))?.toFixed(2)}%</div>
               <input class="range" type=range bind:value={OMInterventionAmt} min=0 max=1 step=0.01 on:mousedown={lock_yaxis}>
               </div>
               </div>
@@ -911,7 +911,7 @@
               pointer-events: all;
               height:{height+13}px">
             <div style="position:absolute; opacity: 0.5; top:-10px; left:10px; width: 120px">
-            <span style="font-size: 13px">{@html math_inline("\\mathcal{R}_t=" + (R0*InterventionAmt).toFixed(2) )}</span> ⟶ 
+            <span style="font-size: 13px">{@html math_inline("\\mathcal{R}_t=" + (R0*InterventionAmt)?.toFixed(2) )}</span> ⟶ 
             </div>
           </div>
         </div>
@@ -933,7 +933,7 @@
                 <div class="paneldesc">decrease transmission by<br></div>
                 </div>
                 <div style="pointer-events: all">
-                <div class="slidertext" on:mousedown={lock_yaxis}>{(InterventionAmt).toFixed(2)}</div>
+                <div class="slidertext" on:mousedown={lock_yaxis}>{(InterventionAmt)?.toFixed(2)}</div>
                 <input class="range" type=range bind:value={InterventionAmt} min=0 max=1 step=0.01 on:mousedown={lock_yaxis}>
                 </div>
                 </div>
@@ -991,7 +991,7 @@
       <div class="paneltitle" data-raw="Basic Reproduction Number">基本再生数 {@html math_inline("\\mathcal{R}_0")} </div>
       <div class="paneldesc" data-raw="Measure of contagiousness: the number of secondary infections each infected individual produces.">传染性的衡量标准：每个感染者产生的二次感染的数量 <br></div>
       </div>
-      <input class="number-input" type=number bind:value={R0} min=0.01 max=25 step=0.01> 
+      <input class="number-input" type=number bind:value={R0} min={0.01} max=25 step={0.01}> 
     </div> 
 
     <div class="column">
@@ -1016,7 +1016,7 @@
     <div class="column">
       <div class="paneltitle" data-raw="Care statistics">中症数据</div>
       <div class="paneldesc" style="height:30px" data-raw="Hospitalization rate">确诊患者住院率<br></div>
-      <div class="paneldesc">{(P_SEVERE*100).toFixed(2)} %</div>
+      <div class="paneldesc">{(P_SEVERE*100)?.toFixed(2)} %</div>
       <input class="number-input" type=number  style="margin-bottom: 8px" bind:value={P_SEVERE} min={0} max=1 step=0.0001>      
       <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Time to hospitalization">从确诊到住院的天数.<br></div>
       <input class="number-input" type=number  bind:value={D_hospital_lag} min={0.5} max=100 step=0.01>&nbsp;天
@@ -1025,7 +1025,7 @@
     <div class="column">
       <div class="paneltitle" data-raw="Mortality Statistics">死亡率</div>
       <div class="paneldesc" style="height:30px" data-raw="Case fatality rate">确诊患者病死率<br></div>
-      <div class="paneldesc">{(CFR*100).toFixed(2)} %</div>
+      <div class="paneldesc">{(CFR*100)?.toFixed(2)} %</div>
       <input class="number-input" type=number  style="margin-bottom: 8px"  bind:value={CFR} min={0} max=1 step=0.0001>
       <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Time from end of incubation to death">从确诊到死亡的天数.<br></div>
       <input class="number-input" type=number  bind:value={Time_to_death} min={(D_infectious)+0.1} max=100 step=0.01>&nbsp;天
@@ -1047,7 +1047,7 @@ In addition to the transmission dynamics, this model allows the use of supplemen
 </p>
 
 <p class = "center">
-Note that one can use this calculator to measure one's risk exposure to the disease for any given day of the epidemic: the probability of getting infected on day {Math.round(indexToTime(active_))} given <a href="https://www.cdc.gov/coronavirus/2019-ncov/hcp/guidance-risk-assesment-hcp.html">close contact</a> with <input type="text" style="width:{Math.ceil(Math.log10(p_num_ind))*9.5 + 5}px; font-size: 15.5px; color:#777" bind:value={p_num_ind}> individuals is {((1-(Math.pow(1 - (Iters[active_][2])*(0.45/100), p_num_ind)))*100).toFixed(5)}% given an attack rate of 0.45% [<a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm6909e1.htm?s_cid=mm6909e1_w">Burke et. al</a>].
+Note that one can use this calculator to measure one's risk exposure to the disease for any given day of the epidemic: the probability of getting infected on day {Math.round(indexToTime(active_))} given <a href="https://www.cdc.gov/coronavirus/2019-ncov/hcp/guidance-risk-assesment-hcp.html">close contact</a> with <input type="text" style="width:{Math.ceil(Math.log10(p_num_ind))*9.5 + 5}px; font-size: 15.5px; color:#777" bind:value={p_num_ind}> individuals is {((1-(Math.pow(1 - (Iters[active_][2])*(0.45/100), p_num_ind)))*100)?.toFixed(5)}% given an attack rate of 0.45% [<a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm6909e1.htm?s_cid=mm6909e1_w">Burke et. al</a>].
 </p>
 
 

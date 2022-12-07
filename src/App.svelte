@@ -609,6 +609,39 @@
 </style>
 <SvelteToast></SvelteToast>
 <h2>基于SEIR模型的疫情计算器</h2>
+
+<p class="center">说明: 本项目为对<a href="http://gabgoh.github.io/COVID/index.html](http://gabgoh.github.io/COVID/index.html" target="__blank">epcalc</a>项目的中文翻译, 仅供数据模拟</p>
+
+<!-- Input data -->
+<div >
+  <div class="center" 
+ >
+ <div style="display:flex;flex-wrap: wrap;
+    word-break: break-all;"
+    >当前页面链接:<a href={state}>{state}</a>
+ <button
+ on:click={
+  ()=>{
+    copy(state)
+    toast.push("复制成功", {
+      duration: 2000
+    })
+  }}
+  style="
+  height: 30px;
+  width: 60px;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid rgb(204, 204, 204);
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;"
+ >复制</button>
+</div>
+  </div>
+</div>
+
+
 <div class="chart" style="display: flex; max-width: 1120px">
 
   <div style="flex: 0 0 270px; width:270px;">
@@ -1141,21 +1174,3 @@ The clinical dynamics in this model are an elaboration on SEIR that simulates th
 </a> wonderful feedback. <a href="https://twitter.com/NikitaJer">Nikita Jerschov</a> for improving clarity of text. Charie Huang for context and discussion.
 </p>
 
-<!-- Input data -->
-<div >
-  <div class="center" 
- >
- <button
- on:click={
-  ()=>{
-    copy(state)
-    toast.push("复制成功", {
-      duration: 2000
-    })
-  }}
- >复制链接进行分享</button>
-    <div style="display:flex;flex-wrap: wrap;
-    word-break: break-all;"
-    >{state}</div>
-  </div>
-</div>

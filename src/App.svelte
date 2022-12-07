@@ -610,7 +610,9 @@
 <SvelteToast></SvelteToast>
 <h2>基于SEIR模型的疫情计算器</h2>
 
-<p class="center">说明: 本项目为对<a href="http://gabgoh.github.io/COVID/index.html](http://gabgoh.github.io/COVID/index.html" target="__blank">epcalc</a>项目的中文翻译, 仅供数据模拟</p>
+<p class="center">说明: 本项目为对<a href="http://gabgoh.github.io/COVID/index.html" target="__blank">epcalc</a>项目的中文翻译, 仅供数据模拟</p>
+
+<p class="center">SEIR模型介绍见项目主页<a href="https://github.com/YaoZeyuan/seir-model" target="__blank">readme</a></p>
 
 <!-- Input data -->
 <div >

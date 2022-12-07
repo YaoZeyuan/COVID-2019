@@ -925,7 +925,7 @@
 </div>
 
 
-<div style="height:220px;">
+<div style="height:280px;">
   <div class="minorTitle">
     <div style="margin: 0px 0px 5px 4px" class="minorTitleColumn" data-raw="Transmission Dynamics">传播动力学</div>
     <div style="flex: 0 0 20; width:20px"></div>
@@ -937,10 +937,10 @@
       <div class="paneltitle" data-raw="Population Inputs">易感人群数</div>
       <div class="paneldesc" style="height:30px" data-raw="Size of population">(城市/社区)人口规模<br></div>
       <div class="slidertext">{format(",")(Math.round(N))}</div>
-      <input class="range" style="margin-bottom: 8px"type=range bind:value={logN} min={5} max=25 step=0.01>
+      <input class="number-input" style="margin-bottom: 8px" type=number bind:value={N} min={1} max=8000000000 step=1>
       <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Number of initial infections.">初始感染人数<br></div>
       <div class="slidertext">{I0}</div>
-      <input class="range" type=range bind:value={I0} min={1} max=10000 step=1>
+      <input class="number-input" type=number bind:value={I0} min={1} max=10000>
     </div>
 
     <div class="column">
@@ -949,17 +949,17 @@
       <div class="paneldesc" data-raw="Measure of contagiousness: the number of secondary infections each infected individual produces.">传染性的衡量标准：每个感染者产生的二次感染的数量 <br></div>
       </div>
       <div class="slidertext">{R0}</div>
-      <input class="range" type=range bind:value={R0} min=0.01 max=25 step=0.01> 
+      <input class="number-input" type=number bind:value={R0} min=0.01 max=25 step=0.01> 
     </div> 
 
     <div class="column">
       <div class="paneltitle" data-raw="Transmission Times">传染期</div>
       <div class="paneldesc" style="height:30px" data-raw="Length of incubation period">潜伏期天数{@html math_inline("T_{\\text{inc}}")}<br></div>
       <div class="slidertext">{(D_incbation).toFixed(2)} 天</div>
-      <input class="range" style="margin-bottom: 8px"type=range bind:value={D_incbation} min={0.15} max=24 step=0.0001>
+      <input class="number-input" type=number style="margin-bottom: 8px" bind:value={D_incbation} min={0.15} max=24 step=0.0001>
       <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Duration patient is infectious">每个感染者具有传染力的天数 {@html math_inline("T_{\\text{inf}}")}.<br></div>
       <div class="slidertext">{D_infectious} 天</div>
-      <input class="range" type=range bind:value={D_infectious} min={0} max=24 step=0.01>
+      <input class="number-input" type=number bind:value={D_infectious} min={0} max=24 step=0.01>
     </div>
 
     <div style="flex: 0 0 20; width:20px"></div>
@@ -969,30 +969,30 @@
       <div class="paneltitle" data-raw="Recovery Times">轻症数据</div>
       <div class="paneldesc" style="height:30px" data-raw='Recovery time for mild cases' >从轻症中恢复所需天数<br></div>
       <div class="slidertext">{D_recovery_mild} 天</div>
-      <input class="range" type=range bind:value={D_recovery_mild} min={0.5} max=100 step=0.01>
+      <input class="number-input" type=number  bind:value={D_recovery_mild} min={0.5} max=100 step=0.01>
       <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Length of hospital stay">若需住院, 在医院中的停留时长<br></div>
       <div class="slidertext">{D_recovery_severe} 天</div>
-      <input class="range" style="margin-bottom: 8px" type=range bind:value={D_recovery_severe} min={0.1} max=100 step=0.01>
+      <input class="number-input" type=number style="margin-bottom: 8px"  bind:value={D_recovery_severe} min={0.1} max=100 step=0.01>
     </div>
 
     <div class="column">
       <div class="paneltitle" data-raw="Care statistics">中症数据</div>
       <div class="paneldesc" style="height:30px" data-raw="Hospitalization rate">确诊患者住院率<br></div>
       <div class="slidertext">{(P_SEVERE*100).toFixed(2)} %</div>
-      <input class="range" style="margin-bottom: 8px"type=range bind:value={P_SEVERE} min={0} max=1 step=0.0001>      
+      <input class="number-input" type=number  style="margin-bottom: 8px" bind:value={P_SEVERE} min={0} max=1 step=0.0001>      
       <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Time to hospitalization">从确诊到住院的天数.<br></div>
       <div class="slidertext">{D_hospital_lag} 天</div>
-      <input class="range" type=range bind:value={D_hospital_lag} min={0.5} max=100 step=0.01>
+      <input class="number-input" type=number  bind:value={D_hospital_lag} min={0.5} max=100 step=0.01>
     </div>
 
     <div class="column">
       <div class="paneltitle" data-raw="Mortality Statistics">死亡率</div>
       <div class="paneldesc" style="height:30px" data-raw="Case fatality rate">确诊患者病死率<br></div>
       <div class="slidertext">{(CFR*100).toFixed(2)} %</div>
-      <input class="range" style="margin-bottom: 8px" type=range bind:value={CFR} min={0} max=1 step=0.0001>
+      <input class="number-input" type=number  style="margin-bottom: 8px"  bind:value={CFR} min={0} max=1 step=0.0001>
       <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Time from end of incubation to death">从确诊到死亡的天数.<br></div>
       <div class="slidertext">{Time_to_death} 天</div>
-      <input class="range" type=range bind:value={Time_to_death} min={(D_infectious)+0.1} max=100 step=0.01>
+      <input class="number-input" type=number  bind:value={Time_to_death} min={(D_infectious)+0.1} max=100 step=0.01>
     </div>
 
   </div>

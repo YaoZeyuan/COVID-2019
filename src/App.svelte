@@ -595,7 +595,7 @@
 
 </style>
 
-<h2>Epidemic Calculator</h2>
+<h2>基于SEIR模型的疫情计算器</h2>
 
 <div class="chart" style="display: flex; max-width: 1120px">
 
@@ -610,7 +610,7 @@
         <Arrow height="41"/>
 
         <div class="legend" style="position:absolute;">
-          <div class="legendtitle">Susceptible</div>
+          <div class="legendtitle">易感人群</div>
           <div style="padding-top: 5px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*Iters[active_][0]))} 
                                   ({ (100*Iters[active_][0]).toFixed(2) }%)</i></div>
@@ -618,7 +618,7 @@
                                  </div>
           </div>
         </div>
-          <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 4px; position:relative;">Population not immune to disease.</div>
+          <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 4px; position:relative;">人群对疾病没有免疫力</div>
 
       </div>
 
@@ -629,7 +629,7 @@
         <Arrow height="41"/>
 
         <div class="legend" style="position:absolute;">
-          <div class="legendtitle">Exposed</div>
+          <div class="legendtitle">无症状感染者</div>
 
           <div style="padding-top: 5px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*Iters[active_][1]))} 
@@ -638,7 +638,7 @@
                                  </div>
           </div>
         </div>
-        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 4px; position:relative;">Population currently in incubation.</div>
+        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 4px; position:relative;">已接触病毒但不具有传染性(未发病)</div>
 
       </div>
 
@@ -649,7 +649,7 @@
         <Arrow height="41"/>   
 
         <div class="legend" style="position:absolute;">
-          <div class="legendtitle">Infectious</div>
+          <div class="legendtitle">感染者</div>
           <div style="padding-top: 5px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*Iters[active_][2]))} 
                                   ({ (100*Iters[active_][2]).toFixed(2) }%)</div>
@@ -657,7 +657,7 @@
                                  </div>
           </div>
         </div>
-        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 4px; position:relative;">Number of infections <i>actively</i> circulating.</div>
+        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 4px; position:relative;"><i>活跃</i>的感染者</div>
 
 
       </div>
@@ -669,7 +669,7 @@
         <Arrow height="56" arrowhead="" dasharray="3 2"/>
 
         <div class="legend" style="position:absolute;">
-          <div class="legendtitle">Removed</div>
+          <div class="legendtitle">康复者</div>
           <div style="padding-top: 10px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N* (1-Iters[active_][0]-Iters[active_][1]-Iters[active_][2]) ))} 
                                   ({ ((100*(1-Iters[active_][0]-Iters[active_][1]-Iters[active_][2]))).toFixed(2) }%)</div>
@@ -677,7 +677,7 @@
                                  </div>
           </div>
         </div>
-        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 4x; position:relative;">Population no longer infectious due to isolation or immunity.</div>
+        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 4x; position:relative;">不再具有传染能力的人(康复/住院/死亡)</div>
 
       </div>
 
@@ -686,14 +686,14 @@
         <Checkbox color="{colors[2]}" bind:checked={checked[2]}/>
         <Arrow height="23" arrowhead="" dasharray="3 2"/>
         <div class="legend" style="position:absolute;">
-          <div class="legendtitle">Recovered</div>
+          <div class="legendtitle">康复</div>
 
           <div style="padding-top: 3px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*(Iters[active_][7]+Iters[active_][8]) ))} 
                                   ({ (100*(Iters[active_][7]+Iters[active_][8])).toFixed(2) }%)</div>
           </div>
         </div>
-        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 8px; position:relative;">Full recoveries.</div>
+        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 8px; position:relative;">完全康复</div>
 
       </div>
 
@@ -702,7 +702,7 @@
         <Arrow height="43" arrowhead="" dasharray="3 2"/>
         <Checkbox color="{colors[1]}" bind:checked={checked[1]}/>
         <div class="legend" style="position:absolute;">
-          <div class="legendtitle">Hospitalized</div>
+          <div class="legendtitle">住院人数</div>
           <div style="padding-top: 3px; padding-bottom: 1px">
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*(Iters[active_][5]+Iters[active_][6]) ))} 
                                   ({ (100*(Iters[active_][5]+Iters[active_][6])).toFixed(2) }%)</div>
@@ -710,7 +710,7 @@
           <div class="legendtextnum"><span style="font-size:12px; padding-right:2px; color:#CCC">Δ</span> <i>{formatNumber(Math.round(N*(get_d(active_)[5]+get_d(active_)[6]))) } / day</i>
                                  </div>
         </div>
-        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 10px; position:relative;">Active hospitalizations.</div>
+        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 10px; position:relative;">入院人数</div>
 
       </div>
 
@@ -720,7 +720,7 @@
         <Checkbox color="{colors[0]}" bind:checked={checked[0]}/>
 
         <div class="legend" style="position:absolute;">
-          <div class="legendtitle">Fatalities</div>
+          <div class="legendtitle">死亡人数</div>
           <div style="padding-top: 3px; padding-bottom: 1px">          
           <div class="legendtextnum"><span style="font-size:12px; padding-right:3px; color:#CCC">∑</span> <i>{formatNumber(Math.round(N*Iters[active_][9]))} 
                                   ({ (100*Iters[active_][9]).toFixed(2) }%)</div>
@@ -728,7 +728,7 @@
                                  </div>
           </div>
         </div>
-        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 10px; position:relative;">Deaths.</div>
+        <div class="legendtext" style="text-align: right; width:105px; left:-111px; top: 10px; position:relative;">死亡人数</div>
       </div>
     </div>
   </div>
@@ -927,60 +927,60 @@
 
 <div style="height:220px;">
   <div class="minorTitle">
-    <div style="margin: 0px 0px 5px 4px" class="minorTitleColumn">Transmission Dynamics</div>
+    <div style="margin: 0px 0px 5px 4px" class="minorTitleColumn" data-raw="Transmission Dynamics">传播动力学</div>
     <div style="flex: 0 0 20; width:20px"></div>
     <div style="margin: 0px 4px 5px 0px" class="minorTitleColumn">Clinical Dynamics</div>
   </div>
   <div class = "row">
 
     <div class="column">
-      <div class="paneltitle">Population Inputs</div>
-      <div class="paneldesc" style="height:30px">Size of population.<br></div>
+      <div class="paneltitle" data-raw="Population Inputs">易感人群数</div>
+      <div class="paneldesc" style="height:30px" data-raw="Size of population">(城市/社区)人口规模<br></div>
       <div class="slidertext">{format(",")(Math.round(N))}</div>
       <input class="range" style="margin-bottom: 8px"type=range bind:value={logN} min={5} max=25 step=0.01>
-      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px">Number of initial infections.<br></div>
+      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Number of initial infections.">初始感染人数<br></div>
       <div class="slidertext">{I0}</div>
       <input class="range" type=range bind:value={I0} min={1} max=10000 step=1>
     </div>
 
     <div class="column">
       <div class="paneltext">
-      <div class="paneltitle">Basic Reproduction Number {@html math_inline("\\mathcal{R}_0")} </div>
-      <div class="paneldesc">Measure of contagiousness: the number of secondary infections each infected individual produces. <br></div>
+      <div class="paneltitle" data-raw="Basic Reproduction Number">基本再生数 {@html math_inline("\\mathcal{R}_0")} </div>
+      <div class="paneldesc" data-raw="Measure of contagiousness: the number of secondary infections each infected individual produces.">传染性的衡量标准：每个感染者产生的二次感染的数量 <br></div>
       </div>
       <div class="slidertext">{R0}</div>
       <input class="range" type=range bind:value={R0} min=0.01 max=10 step=0.01> 
     </div> 
 
     <div class="column">
-      <div class="paneltitle">Transmission Times</div>
-      <div class="paneldesc" style="height:30px">Length of incubation period, {@html math_inline("T_{\\text{inc}}")}.<br></div>
+      <div class="paneltitle" data-raw="Transmission Times">传染期</div>
+      <div class="paneldesc" style="height:30px" data-raw="Length of incubation period">潜伏期患者经过{@html math_inline("T_{\\text{inc}}")}天后成为感染者<br></div>
       <div class="slidertext">{(D_incbation).toFixed(2)} days</div>
       <input class="range" style="margin-bottom: 8px"type=range bind:value={D_incbation} min={0.15} max=24 step=0.0001>
-      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px">Duration patient is infectious, {@html math_inline("T_{\\text{inf}}")}.<br></div>
-      <div class="slidertext">{D_infectious} Days</div>
+      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Duration patient is infectious">每个感染者在 {@html math_inline("T_{\\text{inf}}")}.<br></div>
+      <div class="slidertext">{D_infectious} 天内具有传播力</div>
       <input class="range" type=range bind:value={D_infectious} min={0} max=24 step=0.01>
     </div>
 
     <div style="flex: 0 0 20; width:20px"></div>
 
     <div class="column">
-      <div class="paneltitle">Mortality Statistics</div>
-      <div class="paneldesc" style="height:30px">Case fatality rate.<br></div>
+      <div class="paneltitle" data-raw="Mortality Statistics">死亡率</div>
+      <div class="paneldesc" style="height:30px" data-raw="Case fatality rate">病死率.<br></div>
       <div class="slidertext">{(CFR*100).toFixed(2)} %</div>
       <input class="range" style="margin-bottom: 8px" type=range bind:value={CFR} min={0} max=1 step=0.0001>
-      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px">Time from end of incubation to death.<br></div>
-      <div class="slidertext">{Time_to_death} Days</div>
+      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw="Time from end of incubation to death">从感染(潜伏期)到死亡的天数.<br></div>
+      <div class="slidertext">{Time_to_death} 天</div>
       <input class="range" type=range bind:value={Time_to_death} min={(D_infectious)+0.1} max=100 step=0.01>
     </div>
 
     <div class="column">
-      <div class="paneltitle">Recovery Times</div>
-      <div class="paneldesc" style="height:30px">Length of hospital stay<br></div>
-      <div class="slidertext">{D_recovery_severe} Days</div>
+      <div class="paneltitle" data-raw="Recovery Times">恢复期</div>
+      <div class="paneldesc" style="height:30px" data-raw="Length of hospital stay">住院时间<br></div>
+      <div class="slidertext">{D_recovery_severe} 天</div>
       <input class="range" style="margin-bottom: 8px" type=range bind:value={D_recovery_severe} min={0.1} max=100 step=0.01>
-      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px">Recovery time for mild cases<br></div>
-      <div class="slidertext">{D_recovery_mild} Days</div>
+      <div class="paneldesc" style="height:29px; border-top: 1px solid #EEE; padding-top: 10px" data-raw='Recovery time for mild cases'><br>恢复比率</div>
+      <div class="slidertext">{D_recovery_mild} 天</div>
       <input class="range" type=range bind:value={D_recovery_mild} min={0.5} max=100 step=0.01>
     </div>
 

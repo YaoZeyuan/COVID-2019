@@ -618,7 +618,7 @@
  >
  <div style="display:flex;flex-wrap: wrap;
     word-break: break-all;"
-    >当前页面链接:<a href={state}>{state}</a>
+    >当前页面链接, 复制后可将数据分享给他人<a href={state}>{state}</a>
  <button
  on:click={
   ()=>{

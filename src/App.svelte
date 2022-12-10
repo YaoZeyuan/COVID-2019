@@ -1039,32 +1039,37 @@
 <div style="position: relative; height: 12px"></div>
 
 <p class = "center">
-At the time of writing, the coronavirus disease of 2019 remains a global health crisis of grave and uncertain magnitude. To the non-expert (such as myself), contextualizing the numbers, forecasts and epidemiological parameters described in the media and literature can be challenging. I created this calculator as an attempt to address this gap in understanding.
+  说明: 以下内容为将英文部分参考谷歌翻译和ChatGPT转换而来. 原文请见<a href="http://gabgoh.github.io/COVID/index.html" target="__blank">这里</a>
+</p>
+<p class = "center">
+  在撰写本文时，2019 年的冠状病毒疾病仍然是一场严重且不确定的全球健康危机。对于非专家（例如我自己）来说，将媒体和文学中描述的数字、预测和流行病学参数结合起来可能具有挑战性。我创建这个计算器是为了试图解决这种理解上的差距。
+</p>
+
+<p class="center">
+  。模型通过对每个状态之间的转移进行建模，用来描述传染病的流行趋势和预测未来的传播情况。
+
+  这个计算器实现了一个经典的传染病模型 &mdash <b><a href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SEIR_model">SEIR</a> </b>, SEIR模型是一种用于描述传染病流行过程的数学模型。它把人群分为四个状态：S是易感者，E是暴露者，I是感染者和R是康复者或死亡者, 这是一个在前沿研究中使用的理想化的传播模型 , 例如: [<a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30260-9/fulltext">Wu, et. al</a>, <a href = "https://cmmid.github.io/topics/covid19/current-patterns-transmission/wuhan-early-dynamics.html">Kucharski et. al</a>]. 模型通过对每个状态之间的转移进行建模，利用四个微分方程用来描述疾病的流行趋势和预测未来的传播情况:
+  <span style="color:#777">{@html ode_eqn}</span>
+  除了传播动力学外，这个模型还允许使用补充的时间信息来模拟疾病的死亡率和医疗负担
+</p>
+
+
+<p class = "center">
+请注意，我们可以使用此计算器来推算个人在流行病期间任何一天的感染的风险: 比如在第 {Math.round(indexToTime(active_))} 天<a href="https://www.cdc.gov/coronavirus/2019-ncov/hcp/guidance-risk-assesment-hcp.html">密切接触</a> 了 <input type="text" style="width:{Math.ceil(Math.log10(p_num_ind))*9.5 + 5}px; font-size: 15.5px; color:#777" bind:value={p_num_ind}> 人后感染风险为 {((1-(Math.pow(1 - (Iters[active_][2])*(0.45/100), p_num_ind)))*100)?.toFixed(5)}% (根据这篇论文:[<a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm6909e1.htm?s_cid=mm6909e1_w">Burke et. al</a>], 我们假设密接的传染成功率为 0.45%).
 </p>
 
 <p class = "center">
-This calculator implements a classical infectious disease model &mdash <b><a href="https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology#The_SEIR_model">SEIR</a> </b>(<b>S</b>usceptible → <span style="color:{colors[4]}"><b>E</b></span>xposed → <span style="color:{colors[3]}"><b>I</b></span>nfected → <span><b>R</b></span>emoved), an idealized model of spread still used in frontlines of research e.g. [<a href="https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(20)30260-9/fulltext">Wu, et. al</a>, <a href = "https://cmmid.github.io/topics/covid19/current-patterns-transmission/wuhan-early-dynamics.html">Kucharski et. al</a>]. The dynamics of this model are characterized by a set of four ordinary differential equations that correspond to the stages of the disease's progression:
-<span style="color:#777">{@html ode_eqn}</span>
-In addition to the transmission dynamics, this model allows the use of supplemental timing information to model the death rate and healthcare burden. 
-</p>
-
-<p class = "center">
-Note that one can use this calculator to measure one's risk exposure to the disease for any given day of the epidemic: the probability of getting infected on day {Math.round(indexToTime(active_))} given <a href="https://www.cdc.gov/coronavirus/2019-ncov/hcp/guidance-risk-assesment-hcp.html">close contact</a> with <input type="text" style="width:{Math.ceil(Math.log10(p_num_ind))*9.5 + 5}px; font-size: 15.5px; color:#777" bind:value={p_num_ind}> individuals is {((1-(Math.pow(1 - (Iters[active_][2])*(0.45/100), p_num_ind)))*100)?.toFixed(5)}% given an attack rate of 0.45% [<a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm6909e1.htm?s_cid=mm6909e1_w">Burke et. al</a>].
-</p>
-
-
-<p class = "center">
-A sampling of the estimates for epidemic parameters are presented below:
+已知的流行病学参数估计样本如下：
 </p>
 
 <div class="center">
 <table style="width:100%; margin:auto; font-weight: 300; border-spacing: inherit">
   <tr>
     <th></th>
-    <th>Location</th>
-    <th>Reproduction Number<br> {@html math_inline("\\mathcal{R}_0")}</th>
-    <th>Incubation Period<br> {@html math_inline("T_{\\text{inc}}")} (in days)</th>
-    <th>Infectious Period<br> {@html math_inline("T_{\\text{inf}}")} (in days)</th>
+    <th>地点</th>
+    <th>R0值<br> {@html math_inline("\\mathcal{R}_0")}</th>
+    <th>潜伏期<br> {@html math_inline("T_{\\text{inc}}")} (单位:天)</th>
+    <th>传染期<br> {@html math_inline("T_{\\text{inf}}")} (单位:天)</th>
   </tr>
   <tr>
     <td width="27%"><a href = "https://cmmid.github.io/topics/covid19/current-patterns-transmission/wuhan-early-dynamics.html">Kucharski et. al</a></td>

@@ -780,7 +780,7 @@
     </div>
   </div>
 
-  <div style="flex: 0 0 890px; width:890px; height: {height+128}px; position:relative;">
+  <div style="width:890px; height: {height+128}px; position:relative;display:flex;overflow:hidden;">
 
     <div style="position:relative; top:60px; left: 10px">
       <Chart bind:checked={checked}

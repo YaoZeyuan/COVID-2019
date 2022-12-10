@@ -29,7 +29,6 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev"
+    "start": "vite"
   }
 }

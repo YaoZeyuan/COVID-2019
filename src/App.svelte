@@ -598,7 +598,7 @@
 
   input.number-input{
     height: 20px;
-    width: 75px;
+    width: 90px;
     padding: 3px;
     font-size: 12px;
     border-radius: 4px;
@@ -974,9 +974,9 @@
 
 <div style="height:280px;">
   <div class="minorTitle">
-    <div style="margin: 0px 0px 5px 4px" class="minorTitleColumn" data-raw="Transmission Dynamics">传播动力学</div>
+    <div style="margin: 0px 0px 5px 4px" class="minorTitleColumn" data-raw="Transmission Dynamics">传染病动力学模型初值</div>
     <div style="flex: 0 0 20; width:20px"></div>
-    <div style="margin: 0px 4px 5px 0px" class="minorTitleColumn">Clinical Dynamics</div>
+    <div style="margin: 0px 4px 5px 0px" class="minorTitleColumn" data-raw="Clinical Dynamics">临床数据指标</div>
   </div>
   <div class = "row">
 
@@ -1054,7 +1054,7 @@
 
 
 <p class = "center">
-请注意，我们可以使用此计算器来推算个人在流行病期间任何一天的感染的风险: 比如在第 {Math.round(indexToTime(active_))} 天<a href="https://www.cdc.gov/coronavirus/2019-ncov/hcp/guidance-risk-assesment-hcp.html">密切接触</a> 了 <input type="text" style="width:{Math.ceil(Math.log10(p_num_ind))*9.5 + 5}px; font-size: 15.5px; color:#777" bind:value={p_num_ind}> 人后感染风险为 {((1-(Math.pow(1 - (Iters[active_][2])*(0.45/100), p_num_ind)))*100)?.toFixed(5)}% (根据这篇论文:[<a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm6909e1.htm?s_cid=mm6909e1_w">Burke et. al</a>], 我们假设密接的传染成功率为 0.45%).
+请注意，我们可以使用此计算器来推算个人在流行病期间任何一天的感染的风险: 比如在第 {Math.round(indexToTime(active_))} 天<a href="https://www.cdc.gov/coronavirus/2019-ncov/hcp/guidance-risk-assesment-hcp.html">密切接触</a> 了 <input type="text" style="width:{Math.ceil(Math.log10(p_num_ind))*9.5 + 25}px; font-size: 15.5px; color:#777" bind:value={p_num_ind}> 人后感染风险为 {((1-(Math.pow(1 - (Iters[active_][2])*(0.45/100), p_num_ind)))*100)?.toFixed(5)}% (根据这篇论文:[<a href="https://www.cdc.gov/mmwr/volumes/69/wr/mm6909e1.htm?s_cid=mm6909e1_w">Burke et. al</a>], 我们假设密接的传染成功率为 0.45%).
 </p>
 
 <p class = "center">
@@ -1174,8 +1174,8 @@ Please DM me feedback <a href="https://twitter.com/gabeeegoooh">here</a> or emai
 
 <p class = "center">
 <b> 致谢 </b><br>
-感谢<a href = "https://enkimute.github.io/">Steven De Keninck</a> 提供的 RK4 Integrator(积分器?). <a href="https://twitter.com/ch402">Chris Olah</a>, <a href="https://twitter.com/shancarter">Shan Carter
+感谢<a href = "https://enkimute.github.io/">Steven De Keninck</a> 提供的 RK4 Integrator. <a href="https://twitter.com/ch402">Chris Olah</a>, <a href="https://twitter.com/shancarter">Shan Carter
 </a> 和 <a href="https://twitter.com/ludwigschubert">Ludwig Schubert
-</a> 的精彩反馈. <a href="https://twitter.com/NikitaJer">Nikita Jerschov</a> 协助改善文本可读性. Charie Huang 提供的背景和讨论.
+</a>提供的精彩反馈. <a href="https://twitter.com/NikitaJer">Nikita Jerschov</a> 协助改善文本可读性. Charie Huang 提供的背景和讨论.
 </p>
 

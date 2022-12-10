@@ -30,74 +30,24 @@ via https://chat.openai.com/chat
 ![image.png](http://tva1.sinaimg.cn/large/007Yq4pTly1h8vsqz3j5gj317q0ujgwt.jpg)
 ![image.png](http://tva1.sinaimg.cn/large/007Yq4pTly1h8vsrf8zj4j317o0tme52.jpg)
 
----
+# 项目开发说明
 
-_Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)_
-
----
-
-# svelte app
-
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+初始化
 
 ```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
+yarn
 ```
 
-_Note that you will need to have [Node.js](https://nodejs.org) installed._
-
-## Get started
-
-Install the dependencies...
+项目启动
 
 ```bash
-cd svelte-app
-npm install
+yarn dev
 ```
 
-...then start [Rollup](https://rollupjs.org):
+项目构建
 
 ```bash
-npm run dev
+yarn build
 ```
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-now
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
-```
+已配置 github-action, master 分支更新后即自动推送到 github-page 上

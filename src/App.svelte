@@ -1156,7 +1156,7 @@
 
 
 <p class="center">
-See [<a href="https://academic.oup.com/jtm/advance-article/doi/10.1093/jtm/taaa021/5735319">Liu et. al</a>] detailed survey of current estimates of the reproduction number. Parameters for the diseases' clinical characteristics are taken from the following <a href="https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf">WHO Report</a>. 
+感谢 [<a href="https://academic.oup.com/jtm/advance-article/doi/10.1093/jtm/taaa021/5735319">Liu et. al</a>] 这篇论文提供了上述表格中的信息. 疾病临床特征的参数来自这篇 <a href="https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf">WHO 报告</a>. 
 </p>
 
 <p class="center">
@@ -1168,16 +1168,15 @@ Please DM me feedback <a href="https://twitter.com/gabeeegoooh">here</a> or emai
 <a href="https://twitter.com/gabeeegoooh?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </p> -->
 
-
 <p class = "center">
-<b> Model Details </b><br>
-The clinical dynamics in this model are an elaboration on SEIR that simulates the disease's progression at a higher resolution, subdividing {@html math_inline("I,R")} into <i>mild</i> (patients who recover without the need for hospitalization), <i>moderate</i> (patients who require hospitalization but survive) and <i>fatal</i> (patients who require hospitalization and do not survive). Each of these variables follows its own trajectory to the final outcome, and the sum of these compartments add up to the values predicted by SEIR. Please refer to the source code for details. Note that we assume, for simplicity, that all fatalities come from hospitals, and that all fatal cases are admitted to hospitals immediately after the infectious period.
+  <b> 模型细节 </b><br>
+  该模型中的临床动力学是对 SEIR 的详细阐述，它以更高分辨率模拟疾病的进展. 它将 {@html math_inline("I,R")} 细分为了 <i>轻症</i> (无需住院即可康复的患者), <i>中症</i> (需要住院但可以存活的患者) 和 <i>重症</i> (需要住院但未能幸免的患者). 这些变量中的每一个都遵循自己的轨迹到达最终结果，这些部分的总和加起来就是 SEIR 预测的值。详情请参考源代码。请注意，为简单起见，我们假设所有死亡病例都来自医院，并且所有死亡病例都在传染期结束后立即入院。
 </p>
 
 <p class = "center">
-<b> Acknowledgements </b><br>
-<a href = "https://enkimute.github.io/">Steven De Keninck</a> for RK4 Integrator. <a href="https://twitter.com/ch402">Chris Olah</a>, <a href="https://twitter.com/shancarter">Shan Carter
-</a> and <a href="https://twitter.com/ludwigschubert">Ludwig Schubert
-</a> wonderful feedback. <a href="https://twitter.com/NikitaJer">Nikita Jerschov</a> for improving clarity of text. Charie Huang for context and discussion.
+<b> 致谢 </b><br>
+感谢<a href = "https://enkimute.github.io/">Steven De Keninck</a> 提供的 RK4 Integrator(积分器?). <a href="https://twitter.com/ch402">Chris Olah</a>, <a href="https://twitter.com/shancarter">Shan Carter
+</a> 和 <a href="https://twitter.com/ludwigschubert">Ludwig Schubert
+</a> 的精彩反馈. <a href="https://twitter.com/NikitaJer">Nikita Jerschov</a> 协助改善文本可读性. Charie Huang 提供的背景和讨论.
 </p>
 
